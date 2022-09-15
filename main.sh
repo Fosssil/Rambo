@@ -25,7 +25,7 @@ do
 if [ "$(command -v "$pkg")" ]; 
 then
     tput setaf 2
-    echo "$pkg"" exists on system" 
+    echo "$pkg"" installed" 
     tput setaf 7
 else
 pack_to_inst+=("$pkg")
@@ -34,6 +34,6 @@ done
 for pkg_inst in "${pack_to_inst[@]}";
  do
     tput setaf 1
-    echo "$pkg_inst" "not available"
+    echo "$pkg_inst" "not installed"
     tput setaf 7
 done
