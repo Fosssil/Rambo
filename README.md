@@ -1,2 +1,2 @@
 # Rambo
-A Backup and Restore for linux based OSs
+A Backup and Restore app for linux based OSs
