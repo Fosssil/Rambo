@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 tput setaf 1
 echo "
    ▄████████    ▄████████    ▄▄▄▄███▄▄▄▄   ▀█████████▄   ▄██████▄  
@@ -27,11 +28,12 @@ then
     echo "$pkg"" exists on system" 
     tput setaf 7
 else
-tput setaf 1
-#echo "$pkg"" do not exists"
-declare -a pti
-pti=("$pkg")
-echo "${pti[@]}" "do not exists"
-tput setaf 7
+pack_to_inst+=("$pkg")
 fi
+done
+for pkg_inst in "${pack_to_inst[@]}";
+do
+    tput setaf 1
+    echo "$pkg_inst" "not available"
+    tput setaf 7
 done
