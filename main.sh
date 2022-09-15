@@ -28,8 +28,7 @@ then
     tput setaf 7
 else
 tput setaf 1
-echo "$pkg"" do not exists"
+echo "$pkg"" do not exists" 
 tput setaf 7
 fi
 done
-
