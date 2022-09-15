@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 tput setaf 1
 echo "
    ▄████████    ▄████████    ▄▄▄▄███▄▄▄▄   ▀█████████▄   ▄██████▄  
@@ -28,7 +28,10 @@ then
     tput setaf 7
 else
 tput setaf 1
-echo "$pkg"" do not exists" 
+#echo "$pkg"" do not exists"
+declare -a pti
+pti=("$pkg")
+echo "${pti[@]}" "do not exists"
 tput setaf 7
 fi
 done
