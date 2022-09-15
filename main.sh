@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 tput setaf 1
 echo "
    ▄████████    ▄████████    ▄▄▄▄███▄▄▄▄   ▀█████████▄   ▄██████▄  
@@ -24,7 +24,7 @@ do
 if [ "$(command -v "$pkg")" ]; 
 then
     tput setaf 2
-    echo "$pkg"" exists on system"
+    echo "$pkg"" exists on system" 
     tput setaf 7
 else
 tput setaf 1
