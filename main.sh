@@ -11,18 +11,20 @@ echo " A application in development to Backup and Restore files"
 echo ""
 tput setaf 7
 
+## Code to check recommended packages in system
 echo "Checking for required packages..."
-pack=("rsync" "ssh")
-for str in "${pack[@]}";
+pack=("rsync" "ssh" "bnm")
+for pkg in "${pack[@]}";
 do
-if [ "$(command -v "$str")" ]; 
+if [ "$(command -v "$pkg")" ]; 
 then
     tput setaf 2
-    echo "command ""$str"" exists on system"
+    echo "command ""$pkg"" exists on system"
     tput setaf 7
 else
 tput setaf 1
-echo "$str"" Not exist"
+echo "$pkg"" Not exist"
 tput setaf 7
 fi
 done
+
