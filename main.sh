@@ -27,14 +27,20 @@ for pkg in "${pack[@]}";
 do
 if [ "$(command -v "$pkg")" ];  # packages available
 then
+<<<<<<< HEAD
     tput bold setaf 2
     echo "+" "$pkg" 
     tput sgr0
+=======
+    tput setaf 2
+    echo "$pkg"" installed" 
+>>>>>>> 6fe391ede047cf96e78d1886246d8c5e49b53bf4
     tput setaf 7
 else
 pack_to_inst+=("$pkg")
 fi
 done
+<<<<<<< HEAD
 function inst {
     for pkg_inst in "${pack_to_inst[@]}"; # packages not available
     do
@@ -86,3 +92,11 @@ echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually in
 tput setaf 7
 echo "$packagesNeeded">&2;
 fi
+=======
+for pkg_inst in "${pack_to_inst[@]}";
+ do
+    tput setaf 1
+    echo "$pkg_inst" "not installed"
+    tput setaf 7
+done
+>>>>>>> 6fe391ede047cf96e78d1886246d8c5e49b53bf4
