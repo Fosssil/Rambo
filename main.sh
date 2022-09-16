@@ -17,7 +17,7 @@ echo "A application in development to Backup and Restore files"
 echo ""
 tput setaf 7
 
-## Code to check recommended packages in system
+## Code to check recommended packages in system >>>
 echo "Checking for required packages..."
 pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa")
 echo ""
