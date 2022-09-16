@@ -12,6 +12,22 @@ A Backup and Restore app for linux based OSs
     1. Locally  ( if local it will save data in Hdd and ssd)
     2. Cloud  ( if cloud it will save data in 
 * Then the data get seleted , compressed and saved in required storage .
+
+### Technoloy used 
+ * Linux
+ * git
+ * docker
+ * bash 
+ * aws
+ * ssh
+ * rsync
+ * VMs
+ * tar
+ * bzip2
+ * gzip
+ * cpio
+ * 
+   
    
  
 
