@@ -38,7 +38,11 @@
 #}
 #result=$(test_function)
 #echo "$result" is saved in a variable for later use
-target=/home/"$USER"/.bash_history
+
+
+target=("/home/$USER/.bash_history" "/home/$USER/.bashrc")
 destination=/home/"$USER"/test/
-cp -vi  "$target" "$destination"
-ls -la "$destination"
+for f in "${target[@]}";
+do
+rsync -Rvn "$f" "$destination";
+done
