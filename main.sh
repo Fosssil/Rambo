@@ -19,7 +19,7 @@ tput setaf 7
 
 ## Code to check recommended packages in system
 echo "Checking for required packages..."
-pack=("rsync" "hiihi" "ssh" "tar" "jji" "gzip" "bunzip" "bzip2" "exa")
+pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa")
 echo ""
 tput bold setaf 2
 echo "Installed on system :"
