@@ -19,7 +19,7 @@ tput setaf 7
 
 ## Code to check recommended packages in system
 echo "Checking for required packages..."
-pack=("rsync" "hiihi" "ssh" "tar" "jji" "gzip" "bunzip" "bzip2")
+pack=("rsync" "hiihi" "ssh" "tar" "jji" "gzip" "bunzip" "bzip2" "exa")
 echo ""
 tput bold setaf 2
 echo "Installed on system :"
@@ -51,20 +51,6 @@ tput sgr0 setaf 7
 echo ""
 
 ## Code to install essential packages
-declare -A osInfo;
-osInfo[/etc/redhat-release]=yum
-osInfo[/etc/arch-release]=pacman
-osInfo[/etc/gentoo-release]=emerge
-osInfo[/etc/SuSE-release]=zypp
-osInfo[/etc/debian_version]=apt-get
-osInfo[/etc/alpine-release]=apk
-for f in "${!osInfo[@]}"
-do
-    if [[ -f $f ]];then
-        echo Package manager: ${osInfo[$f]}
-    fi
-done
-
 if [ -x "$(command -v apk)" ]
 then
 sudo apk add --no-cache "$packagesNeeded"
@@ -85,3 +71,7 @@ echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually in
 tput setaf 7
 echo "$packagesNeeded">&2;
 fi
+
+wait
+bash test.sh
+
