@@ -44,5 +44,7 @@ target=("/home/$USER/.bash_history" "/home/$USER/.bashrc")
 destination=/home/"$USER"/test/
 for f in "${target[@]}";
 do
-rsync -Rvn "$f" "$destination";
+rsync -vn --progress "$f" "$destination";
 done
+echo ""
+exa -al --color=always --icons -F
