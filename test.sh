@@ -39,12 +39,15 @@
 #result=$(test_function)
 #echo "$result" is saved in a variable for later use
 
-
-target=("/home/$USER/.bash_history" "/home/$USER/.bashrc")
+echo ""
+target=("/home/$USER/.bash_history" "/home/$USER/.bashrc" "/home/$USER/.zshrc")
 destination=/home/"$USER"/test/
 for f in "${target[@]}";
 do
+tput setaf 2
 rsync -vn --progress "$f" "$destination";
+tput setaf 7
+echo ""
 done
 echo ""
-exa -al --color=always -F
+exa -al --color=always -F "$destination"
