@@ -3,7 +3,7 @@ A Backup and Restore app for linux based OSs
 ### How it works
 * Firstly it will check for required packages.
     1. If found it will go for next step .
-    2. If not found then it will installed the required packages 
+    2. If not found then it will install the required packages 
 * Next it will ask for following options. (As per user Choice)
     1. Automatic data backup  
     2. Manual data backup 
