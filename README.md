@@ -1,4 +1,5 @@
-# Rambo
+# ![Rambo](logo)
+[logo]: ()
 A Backup and Restore app for linux based OSs
 ### How it works
 * Firstly it will check for required packages.
