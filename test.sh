@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#code to find package manager >>>>>>
+
 #declare -A osInfo;
 #osInfo[/etc/redhat-release]=yum
 #osInfo[/etc/arch-release]=pacman
@@ -14,6 +16,9 @@
 #    fi
 #done
 #
+
+#code to install paackges from desired package manager >>>>>
+
 #packagesNeeded=$pkg_inst
 #if [ -x "$(command -v apk)" ]
 #then
@@ -38,6 +43,24 @@
 #}
 #result=$(test_function)
 #echo "$result" is saved in a variable for later use
+
+#code to solve bug, if no. of not installed packages is 0 >>>>>>
+
+distro=("redhat linux" "debian linux" "gentoo linux")
+echo element 0 = "${distro[0]}"
+echo element 1 = "${distro[2]}"
+echo direct length = ${#distro[@]}
+length=${#distro[@]}
+echo length by variable = "$length"
+
+if [ "$length" -eq 0 ]
+then
+echo hello
+else
+echo not hello
+fi
+
+# code for rsync testing >>>>>>
 
 echo ""
 target=("/home/$USER/.bash_history" "/home/$USER/.bashrc" "/home/$USER/.zshrc")
