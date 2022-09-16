@@ -1,5 +1,4 @@
-# ![Rambo](logo)
-[logo]: ()
+# ![Rambo](https://github.com/Fosssil/Rambo/blob/main/rambo.png)
 A Backup and Restore app for linux based OSs
 ### How it works
 * Firstly it will check for required packages.
