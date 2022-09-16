@@ -41,12 +41,12 @@ function inst {
     echo "$pkg_inst";
     done
 }
-result=$(inst)
+packagesNeeded=$(inst)
 echo ""
 tput bold setaf 1
 echo "NOT Installed :"
 tput blink 
-echo "$result"
+echo "$packagesNeeded"
 tput sgr0 setaf 7
 echo ""
 
@@ -65,16 +65,15 @@ do
     fi
 done
 
-packagesNeeded=$(inst)
 if [ -x "$(command -v apk)" ]
 then
 sudo apk add --no-cache "$packagesNeeded"
 elif [ -x "$(command -v pacman)" ];
 then
 sudo pacman -S "$packagesNeeded"
-elif [ -x "$(command -v apt-get)" ];  # reminder: update to APT
+elif [ -x "$(command -v apt)" ];  # reminder: update to APT
 then
-sudo apt-get install "$packagesNeeded"
+sudo apt install "$packagesNeeded"
 elif [ -x "$(command -v dnf)" ];
 then
 sudo dnf install "$packagesNeeded"
