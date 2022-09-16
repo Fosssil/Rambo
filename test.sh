@@ -47,4 +47,4 @@ do
 rsync -vn --progress "$f" "$destination";
 done
 echo ""
-exa -al --color=always --icons -F
+exa -al --color=always -F
