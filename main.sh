@@ -17,7 +17,7 @@ echo "A application in development to Backup and Restore files"
 echo ""
 tput setaf 7
 
-## Code to check recommended packages in system >>>
+## Code to checkDeveloper recommended packages in system >>>
 echo "Checking for required packages..."
 pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa")
 echo ""
@@ -82,6 +82,6 @@ else                        # if array length is not 0
     fi
 fi
 
-#wait
-#bash test.sh
+wait
+bash test.sh
 

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# shellcheck source=/dev/null
+source inputfile.sh > /dev/null
 
 #code to find package manager >>>>>>
 
@@ -46,31 +48,38 @@
 
 #code to solve bug, if no. of not installed packages is 0 >>>>>>
 
-distro=("redhat linux" "debian linux" "gentoo linux")
-echo element 0 = "${distro[0]}"
-echo element 1 = "${distro[2]}"
-echo direct length = ${#distro[@]}
-length=${#distro[@]}
-echo length by variable = "$length"
-
-if [ "$length" -eq 0 ]
-then
-echo hello
-else
-echo not hello
-fi
+#distro=("redhat linux" "debian linux" "gentoo linux")
+#echo element 0 = "${distro[0]}"
+#echo element 1 = "${distro[2]}"
+#
+#
+#
+#echo direct length = ${#distro[@]}
+#length=${#distro[@]}
+#echo length by variable = "$length"
+#
+#if [ "$length" -eq 0 ]
+#then
+#echo hello
+#else
+#echo not hello
+#fi
 
 # code for rsync testing >>>>>>
 
 echo ""
-target=("/home/$USER/.bash_history" "/home/$USER/.bashrc" "/home/$USER/.zshrc")
-destination=/home/"$USER"/test/
-for f in "${target[@]}";
-do
-tput setaf 2
-rsync -vn --progress "$f" "$destination";
-tput setaf 7
-echo ""
-done
-echo ""
-exa -al --color=always -F "$destination"
+echo "Following files are going to be backed up :)"
+echo "${myArray[@]}"
+myArray=$(bash inputfile.sh | tr "\n"  " ")
+
+        target=("${myArray[@]}")
+        destination=test/
+        for items in "${target[@]}";
+        do
+        tput setaf 2
+        eval rsync -Rrnv --progress "$items"  "$destination";
+        tput setaf 7
+        echo ""
+        done
+        echo ""
+        exa -al --color=always -F "$destination"
