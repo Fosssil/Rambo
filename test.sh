@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 #tr setaf 5
-echo ""
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
 #tr setaf 7
 source inputfile.sh 
@@ -71,7 +70,6 @@ source inputfile.sh
 
 # code for rsync testing >>>>>>
 
-echo ""
 while true; do
 
 read -p "Do you want to proceed? (y/N) " yn

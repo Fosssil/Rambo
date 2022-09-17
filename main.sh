@@ -83,5 +83,5 @@ else                        # if array length is not 0
 fi
 
 wait
-bash test.sh
+bash auto_bck.sh
 
