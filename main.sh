@@ -23,24 +23,27 @@ pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa")
 echo ""
 tput bold setaf 2
 echo "Installed on system :"
+
 for pkg in "${pack[@]}"; 
 do
-if [ "$(command -v "$pkg")" ];  # packages available
-then
-    tput bold setaf 2
-    echo "+" "$pkg" 
-    tput sgr0
-    tput setaf 7
-else
-pack_to_inst+=("$pkg")   # package to install array
-fi
+  if [ "$(command -v "$pkg")" ];  # packages available
+  then
+      tput bold setaf 2
+      echo "+" "$pkg" 
+      tput sgr0
+      tput setaf 7
+  else
+    pack_to_inst+=("$pkg")   # package to install array
+  fi
 done
+
 function inst {
     for pkg_inst in "${pack_to_inst[@]}"; # packages not available
     do
-    echo "$pkg_inst";
+      echo "$pkg_inst";
     done
 }
+
 packagesNeeded=$(inst)
 length=${#pack_to_inst[@]}  # checking length of not installed array
 echo ""
