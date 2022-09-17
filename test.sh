@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+########################################################################
+#                                                                      #
+#                                                                      #     
+#                                                                      #
+#                                                                      # 
+#                     This is just a test file :)                      # 
+#                                                                      #
+#                                                                      #
+#                                                                      #
+#                                                                      #
+########################################################################
 # shellcheck source=/dev/null
 #tr setaf 5
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
