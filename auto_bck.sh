@@ -26,7 +26,7 @@ destination=test/           # Variable: store destination address where, backup 
 for items in "${target[@]}"; # Loop: to pass target address one by one to rync command
 do
     tput setaf 2
-    eval rsync -Rrnv --progress "$items"  "$destination"; # Command: rsync to backup files, -n to dry_run
+    eval rsync -Rnrv --progress "$items"  "$destination"; # Command: rsync to backup files, -n to dry_run
     tput setaf 7
     echo ""
 done

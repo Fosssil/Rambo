@@ -7,4 +7,5 @@ echo -e "\e[33m
 /home/$USER/.zshrc 
 /home/$USER/.zsh_history 
 /home/$USER/.byobu
+/etc/gimp/
 \e[0m"
