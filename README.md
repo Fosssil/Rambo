@@ -1,4 +1,5 @@
 # ![Rambo](https://github.com/Fosssil/Rambo/blob/main/rambo.png)
+Fossil :wilted_flower: <br>
 A Backup and Restore app for linux based OSs
 ### How it works
 * Firstly it will check for required packages.
