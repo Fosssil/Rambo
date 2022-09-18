@@ -7,7 +7,7 @@ source inputfile.sh # Command: to import input file of targeted locations
 while true;                 # Loop: to get user input to proceed to further steps or not
 do
     read -p "Do you want to proceed? (y/N) " yn        # Command: read user input
-    case $yn in                         # Conditon: switch case
+    case $yn in                                     # Conditon: switch case
 	    [yY] ) echo -e "\e[32m ok, we will do stuff \e[0m"; # Input: for yes
 		        break;;
 	    [nN] ) echo -e "\e[31m exiting...\e[0m";        # Input: for no (will exit from program)

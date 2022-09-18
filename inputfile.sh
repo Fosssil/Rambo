@@ -8,4 +8,5 @@ echo -e "\e[33m
 /home/$USER/.zsh_history 
 /home/$USER/.byobu
 /etc/gimp/
+/etc/pacman.d/
 \e[0m"
