@@ -1,4 +1,4 @@
-# ![Rambo](https://github.com/Fosssil/Rambo/blob/main/rambo.png)
+# Rambo
 Fossil :wilted_flower: <br>
 A Backup and Restore app for linux based OSs
 ### How it works
