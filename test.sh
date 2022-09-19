@@ -81,8 +81,8 @@ source inputfile.sh
 
 # code for rsync testing >>>>>>
 
-while true; do
-
+while true;
+do
 read -p "Do you want to proceed? (y/N) " yn
 
 case $yn in 
