@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 ########################################################################
 #                                                                      #
-#                                                                      #     
 #                                                                      #
-#                                                                      # 
-#                     This is just a test file :)                      # 
+#                                                                      #
+#                                                                      #
+#                     This is just a test file :)                      #
 #                                                                      #
 #                                                                      #
 #                                                                      #
@@ -14,19 +14,22 @@
 #tr setaf 5
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
 #tr setaf 7
-source inputfile.sh 
+source inputfile.sh
 
 #code to find package manager >>>>>>
 
 FILE=$(zenity --file-selection --multiple --title="Select a File")
 
 case $? in
-         0)
-                echo "\"$FILE\" selected.";;
-         1)
-                echo "No file selected.";;
-        -1)
-                echo "An unexpected error has occurred.";;
+0)
+       echo "\"$FILE\" selected."
+       ;;
+1)
+       echo "No file selected."
+       ;;
+-1)
+       echo "An unexpected error has occurred."
+       ;;
 esac
 
 #declare -A osInfo;
@@ -59,9 +62,9 @@ esac
 #elif [ -x "$(command -v dnf)" ];
 #then
 #sudo dnf install "$packagesNeeded"
-#elif [ -x "$(command -v zypper)" ]; 
+#elif [ -x "$(command -v zypper)" ];
 #then sudo zypper install "$packagesNeeded"
-#else 
+#else
 #echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install:
 #$packagesNeeded">&2;
 #fi
@@ -92,31 +95,33 @@ esac
 
 # code for rsync testing >>>>>>
 
-while true;
-do
-read -p "Do you want to proceed? (y/N) " yn
+while true; do
+       read -r -p "Do you want to proceed? (y/N) " yn
 
-case $yn in 
-	[yY] ) echo -e "\e[32m ok, we will do stuff \e[0m";
-		    break;;
-	[nN] ) echo -e "\e[31m exiting...\e[0m";
-		    exit;;
-	* )  echo -e "\e[31m Invalid response..\e[0m";
-    
-esac
+       case $yn in
+       [yY])
+              echo -e "\e[32m ok, we will do stuff \e[0m"
+              break
+              ;;
+       [nN])
+              echo -e "\e[31m exiting...\e[0m"
+              exit
+              ;;
+       *) echo -e "\e[31m Invalid response..\e[0m" ;;
+
+       esac
 done
 echo ""
 echo " Doing stuff... "
-myArray=$(bash inputfile.sh | tr "\n"  " ")
+myArray=$(bash inputfile.sh | tr "\n" " ")
 sleep 1s
 target=("${myArray[@]}")
 destination=test/
-for items in "${target[@]}";
-do
-tput setaf 2
-eval rsync -Rrnv --progress "$items"  "$destination";
-tput setaf 7
-echo ""
+for items in "${target[@]}"; do
+       tput setaf 2
+       eval rsync -Rrnv --progress "$items" "$destination"
+       tput setaf 7
+       echo ""
 done
 echo ""
 exa -al --color=always -F $destination
