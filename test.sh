@@ -153,7 +153,7 @@ BACKTITLE="by SAGAR DAHIYA"
 TITLE="Rambo"
 MENU="Choose the file to run: "
 OPTIONS=(1 "Automatic Backup"
-       2 "Exit"
+       2 "Backup by user input"
        3 "Test..")
 
 CHOICE=$(dialog --clear \
@@ -170,7 +170,7 @@ case $CHOICE in
        bash auto_bck.sh
        ;;
 2)
-       exit
+       bash bck.sh       
        ;;
 3)
        echo " Some text here "
