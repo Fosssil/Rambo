@@ -76,5 +76,21 @@ else # Condition(else): if array length is not 0
   fi
 fi
 
-wait             # Command: to hold installation of packages
-bash auto_bck.sh # Command: to run automatic backup script
+wait 
+echo "which file to run ?" 
+echo "1. Automatic Backup"           # Command: to hold installation of packages
+while true; do                                     # Loop: (while) to get user input to proceed to further steps or not
+    read -r -p "Enter an option: " file # Command: read user input
+    echo ""
+    case $file in                                    # Conditon: switch case
+    [1])
+        bash auto_bck.sh # Input: for yes
+        break
+        ;;
+    [2])
+        echo -e "\e[31m exiting...\e[0m" # Input: for no (will exit from program)
+        exit
+        ;;
+    *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
+    esac
+done
