@@ -24,7 +24,7 @@ echo ""
 tput bold setaf 2
 echo "Installed on system :"
 
-for pkg in "${pack[@]}"; do           # Loop: to show packages install or not
+for pkg in "${pack[@]}"; do           # Loop: (for) to show packages install or not
   if [ "$(command -v "$pkg")" ]; then # packages available
     tput bold setaf 2
     echo "+" "$pkg"

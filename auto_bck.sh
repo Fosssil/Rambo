@@ -13,16 +13,16 @@ target=(
     /home/"$USER"/.local/share/plasma
     /home/"$USER"/.local/share/konsole
     /home/"$USER"/token.txt
-) # Array: store input
-COUNTER=1
+) # Array: store targated locations
+COUNTER=1       # Variable: counter used in below for loop
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
-for i in "${target[@]}"; do
+for i in "${target[@]}"; do     # Loop: (for) to display the array items to user .i.e. target location
     echo -e "\e[33m" "$COUNTER." "$i" "\e[0m"
     COUNTER=$((COUNTER + 1))
 done
 
 # code for rsync
-while true; do                                     # Loop: to get user input to proceed to further steps or not
+while true; do                                     # Loop: (while) to get user input to proceed to further steps or not
     read -r -p "Do you want to proceed? (y/N) " yn # Command: read user input
     case $yn in                                    # Conditon: switch case
     [yY])
@@ -40,7 +40,7 @@ done
 echo ""
 echo " Doing stuff... "
 
-#for items in "${myArray[@]}"; do # Loop: to pass target address one by one to rync command
+#for items in "${myArray[@]}"; do # Loop: (for) to pass target address one by one to rync command
 tput setaf 2
 rsync -Rnr --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
 tput setaf 7
