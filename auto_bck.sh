@@ -22,6 +22,7 @@ target=(
 
 COUNTER=1 # Variable: counter used in below for loop
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
+
 for i in "${target[@]}"; do # Loop: (for) to display the array items to user .i.e. target location
     echo -e "\e[33m" "$COUNTER." "$i" "\e[0m"
     COUNTER=$((COUNTER + 1))
@@ -56,3 +57,4 @@ echo ""
 echo ""
 exa -al --color=always -F $destination # Command: the colorfull subtitute for 'ls' command
 tree -ah $destination                  # Command: display the tree structure of destination folder
+
