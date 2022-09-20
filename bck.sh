@@ -12,19 +12,18 @@
 
 echo -e "\e[1;32mEnter your files location to take backup: \e[0m"
 echo -e "\e[31m(end with an empty line)\e[0m"
-array=()
+array=() # Array: to store files location
 
-while IFS= read -r line; do
-    [[ $line ]] || break # break if line is empty
+while IFS= read -r line; do # Loop: (while) to enter data from user into array
+    [[ $line ]] || break    # break if line is empty
     array+=("$line")
-
 done
 
-if [ "${#array[@]}" -eq 0 ]; then
+if [ "${#array[@]}" -eq 0 ]; then # Condition: (if) array is empty
     echo "Please enter something..."
 else
 
-    echo -e "\e[32mFollowing files will be backup: \e[0m"
+    echo -e "\e[32mFollowing files will be backup: \e[0m" # Condition: (else) array have locations
     for list in "${array[@]}"; do
         echo -e "\e[33m$list\e[0m"
     done
