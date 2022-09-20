@@ -54,6 +54,7 @@ A Backup and Restore app for linux based OSs
 
 
 ## Team Members and their roles.
+Easter egg: You ask to execute command, but you don't ask with sudo 
 1. Sagar Dahiya - Developer 
 2. Deepak Chandra Pandey - Documentation Editor
 3. Manisha Arora - Tester
