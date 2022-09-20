@@ -57,4 +57,3 @@ echo ""
 echo ""
 exa -al --color=always -F $destination # Command: the colorfull subtitute for 'ls' command
 tree -ah $destination                  # Command: display the tree structure of destination folder
-
