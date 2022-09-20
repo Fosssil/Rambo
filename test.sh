@@ -128,20 +128,51 @@
 #tree -ah $destination
 #
 
-echo "which file to run ?" 
-echo "1. Automatic Backup"           # Command: to hold installation of packages
-while true; do                                     # Loop: (while) to get user input to proceed to further steps or not
-    read -r -p "Enter an option: " file # Command: read user input
-    echo ""
-    case $file in                                    # Conditon: switch case
-    [1])
-        bash auto_bck.sh # Input: for yes
-        break
-        ;;
-    [2])
-        echo -e "\e[31m exiting...\e[0m" # Input: for no (will exit from program)
-        exit
-        ;;
-    *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
-    esac
-done
+#echo "which file to run ?"
+#echo "1. Automatic Backup"           # Command: to hold installation of packages
+#while true; do                                     # Loop: (while) to get user input to proceed to further steps or not
+#    read -r -p "Enter an option: " file # Command: read user input
+#    echo ""
+#    case $file in                                    # Conditon: switch case
+#    [1])
+#        bash auto_bck.sh # Input: for yes
+#        break
+#        ;;
+#    [2])
+#        echo -e "\e[31m exiting...\e[0m" # Input: for no (will exit from program)
+#        exit
+#        ;;
+#    *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
+#    esac
+#done
+
+HEIGHT=15
+WIDTH=40
+CHOICE_HEIGHT=5
+BACKTITLE="by SAGAR DAHIYA"
+TITLE="Rambo"
+MENU="Choose the file to run: "
+OPTIONS=(1 "Automatic Backup"
+       2 "Exit"
+       3 "Test..")
+
+CHOICE=$(dialog --clear \
+       --backtitle "$BACKTITLE" \
+       --title "$TITLE" \
+       --menu "$MENU" \
+       $HEIGHT $WIDTH $CHOICE_HEIGHT \
+       "${OPTIONS[@]}" \
+       2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+1)
+       bash auto_bck.sh
+       ;;
+2)
+       exit
+       ;;
+3)
+       echo " Some text here "
+       ;;
+esac
