@@ -1,7 +1,25 @@
 #!/usr/bin/bash
-# shellcheck source=/dev/null
+destination=test/ # Variable: store destination address where, backup files will be placed
+target=(
+    /home/"$USER"/.bash_history
+    /home/"$USER"/.bashrc
+    /home/"$USER"/.ssh
+    /home/"$USER"/.npm
+    /home/"$USER"/Documents
+    /home/"$USER"/.zshrc
+    /home/"$USER"/.local/share/kwalletd
+    /home/"$USER"/.local/share/kwin
+    /home/"$USER"/.zsh_history
+    /home/"$USER"/.local/share/plasma
+    /home/"$USER"/.local/share/konsole
+    /home/"$USER"/token.txt
+) # Array: store input
+COUNTER=1
 echo -e "\e[35mFollowing files are going to be backed up :) \e[0m"
-source inputfile.sh # Command: to import input file of targeted locations
+for i in "${target[@]}"; do
+    echo -e "\e[33m" "$COUNTER." "$i" "\e[0m"
+    COUNTER=$((COUNTER + 1))
+done
 
 # code for rsync
 while true; do                                     # Loop: to get user input to proceed to further steps or not
@@ -21,17 +39,13 @@ done
 
 echo ""
 echo " Doing stuff... "
-myArray=$(bash inputfile.sh | tr "\n" " ") # Array: store input from inputfile.sh, tr to trim next line
-sleep 1s                                   # Command: sleep for 1 sec, because program is too fast :))
-target=("${myArray[@]}")                   # Variable: store values from array in variable
-destination=test/                          # Variable: store destination address where, backup files will be placed
 
-for items in "${target[@]}"; do # Loop: to pass target address one by one to rync command
-    tput setaf 2
-    eval rsync -Rnrv --progress "$items" "$destination" # Command: rsync to backup files, -n to dry_run
-    tput setaf 7
-    echo ""
-done
+#for items in "${myArray[@]}"; do # Loop: to pass target address one by one to rync command
+tput setaf 2
+rsync -Rnr --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+tput setaf 7
+echo ""
+#done
 
 echo ""
 exa -al --color=always -F $destination # Command: the colorfull subtitute for 'ls' command
