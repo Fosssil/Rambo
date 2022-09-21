@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Fosssil/Rambo/blob/main/2.jpeg" />
+  <img src="https://github.com/Fosssil/Rambo/blob/main/LOGO.png" />
 </p> 
 
 Fossil :wilted_flower: <br>
