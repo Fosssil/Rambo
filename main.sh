@@ -58,7 +58,7 @@ else # Condition(else): if array length is not 0
   echo ""
 
   # Conditions: to install essential packages
-  if [ -x "$(command -v apk)" ]; then
+  if [ -x "$(command -v apk)" ]; then # Option: -x with test to check if file exist and is executable
     sudo apk add --no-cache "$packagesNeeded"
   elif [ -x "$(command -v pacman)" ]; then
     sudo pacman -S "$packagesNeeded"
