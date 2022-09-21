@@ -59,5 +59,6 @@ Easter egg: You ask to execute command, but you don't ask with sudo
 2. Deepak Chandra Pandey - Documentation Editor
 3. Manisha Arora - Tester
 4. Khushi Sharma - Tester
+5. Pardeep - new visiter, hurray
 
 
