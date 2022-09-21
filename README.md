@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="https://github.com/Fosssil/Rambo/blob/main/2.jpeg">
-</p>
+  <img src="https://github.com/Fosssil/Rambo/blob/main/2.jpeg" />
+</p> 
+
 Fossil :wilted_flower: <br>
-A Backup and Restore app for linux based OSs
+A Backup and Restore app for linux based OSs <br>
 ### How it works
 * Firstly it will check for required packages.
     1. If found it will go for next step .
