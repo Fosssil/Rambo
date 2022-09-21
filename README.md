@@ -1,4 +1,6 @@
-# ![Rambo](https://github.com/Fosssil/Rambo/blob/main/2.jpeg)
+<p align="center">
+  <img src="https://github.com/Fosssil/Rambo/blob/main/2.jpeg">
+</p>
 Fossil :wilted_flower: <br>
 A Backup and Restore app for linux based OSs
 ### How it works
