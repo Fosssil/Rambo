@@ -30,10 +30,10 @@ done
 if [ "${#array[@]}" -eq 0 ]; then # Condition: (if) array is empty
     echo "Please enter something..."
 else
-
+COUNTER=1 # Variable: counter used in below for loop
     echo -e "\e[32mFollowing files will be backup: \e[0m" # Condition: (else) array have locations
     for list in "${array[@]}"; do
-        echo -e "\e[33m$list\e[0m"
+        echo -e "\e[33m$COUNTER. $list\e[0m"
     done
     rsync -Rrnv --progress "${array[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
 fi
