@@ -167,10 +167,10 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
 1)
-       bash auto_bck.sh
+       source auto_bck.sh
        ;;
 2)
-       bash bck.sh       
+       source bck.sh       
        ;;
 3)
        echo " Some text here "

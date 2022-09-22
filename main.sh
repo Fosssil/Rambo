@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+# shellcheck source=/dev/null
+
 
 tput setaf 1
 echo "
@@ -84,7 +86,7 @@ while true; do                        # Loop: (while) to get user input to proce
   echo ""
   case $file in # Conditon: switch case
   [1])
-    bash auto_bck.sh # Input: for yes
+    source auto_bck.sh # Input: for yes
     break
     ;;
   [2])
