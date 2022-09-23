@@ -55,21 +55,22 @@ else # Condition(else): if array length is not 0
   tput bold setaf 1
   echo "NOT Installed :"
   tput blink
-  echo "$packagesNeeded"
+  echo  "$packagesNeeded"
+
   tput sgr0 setaf 7
   echo ""
 
   # Conditions: to install essential packages
   if [ -x "$(command -v apk)" ]; then # Option: -x with test to check if file exist and is executable
-    sudo apk add --no-cache "$packagesNeeded"
+    sudo apk add --no-cache "${pack_to_inst[@]}"
   elif [ -x "$(command -v pacman)" ]; then
-    sudo pacman -S "$packagesNeeded"
+    sudo pacman -S "${pack_to_inst[@]}"
   elif [ -x "$(command -v apt)" ]; then
-    sudo apt install "$packagesNeeded"
+    sudo apt install "${pack_to_inst[@]}"
   elif [ -x "$(command -v dnf)" ]; then
-    sudo dnf install "$packagesNeeded"
+    sudo dnf install "${pack_to_inst[@]}"
   elif [ -x "$(command -v zypper)" ]; then
-    sudo zypper install "$packagesNeeded"
+    sudo zypper install "${pack_to_inst[@]}"
   else
     tput setaf 1
     echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install:"
@@ -79,8 +80,10 @@ else # Condition(else): if array length is not 0
 fi
 
 wait
-echo "which file to run ?"
-echo "1. Automatic Backup"            # Command: to hold installation of packages
+echo ""
+echo "Select an option: "
+echo "1. Automatic Backup"           # Command: to hold installation of packages
+echo "2. Exit"
 while true; do                        # Loop: (while) to get user input to proceed to further steps or not
   read -r -p "Enter an option: " file # Command: read user input
   echo ""
@@ -90,7 +93,7 @@ while true; do                        # Loop: (while) to get user input to proce
     break
     ;;
   [2])
-    echo -e "\e[31m exiting...\e[0m" # Input: for no (will exit from program)
+    echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
     exit
     ;;
   *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
