@@ -67,7 +67,7 @@ else # Condition(else): if array length is not 0
   elif [ -x "$(command -v apt)" ]; then
     sudo apt install "$packagesNeeded"
   elif [ -x "$(command -v dnf)" ]; then
-    sudo yum install "$packagesNeeded"
+    sudo dnf install "$packagesNeeded"
   elif [ -x "$(command -v zypper)" ]; then
     sudo zypper install "$packagesNeeded"
   else
