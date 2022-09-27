@@ -146,34 +146,54 @@
 #    esac
 #done
 
+#HEIGHT=15
+#WIDTH=40
+#CHOICE_HEIGHT=5
+#BACKTITLE="by SAGAR DAHIYA"
+#TITLE="Rambo"
+#MENU="Choose the file to run: "
+#OPTIONS=(1 "Automatic Backup"
+#       2 "Backup by user input"
+#       3 "Test..")
+#
+#CHOICE=$(dialog --clear \
+#       --backtitle "$BACKTITLE" \
+#       --title "$TITLE" \
+#       --menu "$MENU" \
+#       $HEIGHT $WIDTH $CHOICE_HEIGHT \
+#       "${OPTIONS[@]}" \
+#       2>&1 >/dev/tty)
+#
+#clear
+#case $CHOICE in
+#1)
+#       source auto_bck.sh
+#       ;;
+#2)
+#       source bck.sh
+#       ;;
+#3)
+#       echo " Some text here "
+#       ;;
+#esac
 
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=5
-BACKTITLE="by SAGAR DAHIYA"
-TITLE="Rambo"
-MENU="Choose the file to run: "
-OPTIONS=(1 "Automatic Backup"
-       2 "Backup by user input"
-       3 "Test..")
+cur_folder=$HOME/
+while true; do
+       folder=$( (
+              echo -e '.\n..'
+              fd -t d --color=always
+       ) |
+              fzf -m --no-height --preview-window=right:50% \
+                     --preview 'tree -L 2 -C {}')
+       test $? -ne 0 && break
+       cur_folder="$cur_folder/$folder"
+       cd "$cur_folder" || exit
+done
 
-CHOICE=$(dialog --clear \
-       --backtitle "$BACKTITLE" \
-       --title "$TITLE" \
-       --menu "$MENU" \
-       $HEIGHT $WIDTH $CHOICE_HEIGHT \
-       "${OPTIONS[@]}" \
-       2>&1 >/dev/tty)
+echo "$cur_folder"
 
-clear
-case $CHOICE in
-1)
-       source auto_bck.sh
-       ;;
-2)
-       source bck.sh       
-       ;;
-3)
-       echo " Some text here "
-       ;;
-esac
+#while true; do
+##dialog --title "text" --fselect /path/to/dir height width
+#FILE+=$(dialog --stdout --title "Please choose a file" --fselect "$HOME"/ 14 48)
+#echo "${FILE[@]}" file chosen.
+#done
