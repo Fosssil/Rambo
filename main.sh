@@ -66,6 +66,7 @@ else # Condition(else): if array length is not 0
   elif [ -x "$(command -v pacman)" ]; then
     sudo pacman -S "${pack_to_inst[@]}"
   elif [ -x "$(command -v apt)" ]; then
+    sudo apt update
     sudo apt install "${pack_to_inst[@]}"
   elif [ -x "$(command -v dnf)" ]; then
     sudo dnf install "${pack_to_inst[@]}"
