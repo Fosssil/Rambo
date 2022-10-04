@@ -29,8 +29,6 @@ readarray -t target < <(fzf -m --scheme=path \
     --marker='+' --prompt='/' \
     --header='Select files' --preview='tree -C -L 3 -x')
 
-
-
 if [ "${#target[@]}" -eq 0 ]; then # Condition: (if) array is empty
     echo "Please enter something..."
 else
