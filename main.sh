@@ -21,7 +21,7 @@ tput setaf 7
 
 ## Block: code to check developer's recommended packages in system
 echo "Checking for required packages..."
-pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa" "dialog" "fzf") # Array: to store needed packages
+pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa" "dialog" "fzf" "tree") # Array: to store needed packages
 echo ""
 tput bold setaf 2
 echo "Installed on system :"
