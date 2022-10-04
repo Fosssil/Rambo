@@ -20,20 +20,20 @@ clear
 
 echo -e "\e[1;32mEnter your files location to take backup: \e[0m"
 echo -e "\e[31m(end with an empty line)\e[0m"
-array=() # Array: to store files location
+target=() # Array: to store files location
 destination=test/
 
 while IFS= read -r line; do # Loop: (while) to enter data from user into array
     [[ $line ]] || break    # break if line is empty
-    array+=("$line")
+    target+=("$line")
 done
-if [ "${#array[@]}" -eq 0 ]; then # Condition: (if) array is empty
+if [ "${#target[@]}" -eq 0 ]; then # Condition: (if) array is empty
     echo "Please enter something..."
 else
 COUNTER=1 # Variable: counter used in below for loop
     echo -e "\e[32mFollowing files will be backup: \e[0m" # Condition: (else) array have locations
-    for list in "${array[@]}"; do
+    for list in "${target[@]}"; do
         echo -e "\e[33m$COUNTER. $list\e[0m"
     done
-    rsync -Rrnv --progress "${array[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+    rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
 fi
