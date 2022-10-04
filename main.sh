@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 # shellcheck source=/dev/null
 
-
 tput setaf 1
 echo "
    ▄████████    ▄████████    ▄▄▄▄███▄▄▄▄   ▀█████████▄   ▄██████▄
@@ -55,7 +54,7 @@ else # Condition(else): if array length is not 0
   tput bold setaf 1
   echo "NOT Installed :"
   tput blink
-  echo  "$packagesNeeded"
+  echo "$packagesNeeded"
 
   tput sgr0 setaf 7
   echo ""
@@ -83,8 +82,10 @@ fi
 wait
 echo ""
 echo "Select an option: "
-echo "1. Automatic Backup"           # Command: to hold installation of packages
-echo "2. Exit"
+echo "1. run auto_bck.sh file" # Command: to hold installation of packages
+echo "2. run bck.sh file"
+echo "3. run test.sh file"
+echo "4. Exit"
 while true; do                        # Loop: (while) to get user input to proceed to further steps or not
   read -r -p "Enter an option: " file # Command: read user input
   echo ""
@@ -94,6 +95,14 @@ while true; do                        # Loop: (while) to get user input to proce
     break
     ;;
   [2])
+    source bck.sh # Input: for yes
+    break
+    ;;
+  [3])
+    source test.sh # Input: for yes
+    break
+    ;;
+  [4])
     echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
     exit
     ;;
