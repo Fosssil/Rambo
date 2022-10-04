@@ -177,23 +177,25 @@
 #       ;;
 #esac
 
-cur_folder=$HOME/
-while true; do
-       folder=$( (
-              echo -e '.\n..'
-              fd -t d --color=always
-       ) |
-              fzf -m --no-height --preview-window=right:50% \
-                     --preview 'tree -L 2 -C {}')
-       test $? -ne 0 && break
-       cur_folder="$cur_folder/$folder"
-       cd "$cur_folder" || exit
-done
-
-echo "$cur_folder"
-
+#cur_folder=$HOME/
 #while true; do
-##dialog --title "text" --fselect /path/to/dir height width
-#FILE+=$(dialog --stdout --title "Please choose a file" --fselect "$HOME"/ 14 48)
-#echo "${FILE[@]}" file chosen.
+#       cd /
+#       folder=$( ( echo -e '.\n..' fd -t d ) | fzf -m --no-height --preview-window=right:50% --preview 'tree -L 2 -C {}')
+#       test $? -ne 0 && break
+#       cur_folder="$cur_folder/$folder"
+#       cd "$cur_folder" || exit
 #done
+#array=()
+#echo "$cur_folder"
+cd /
+#fzf -m  --preview-window=right:50% --preview 'fd -t d | tree -L 2 -C {}'
+array=$(fzf -m --scheme=path \
+    --tiebreak=begin,index \
+    --border=rounded --ansi \
+    --marker="+" --prompt="/" \
+    --header="Select files" \
+    --preview='tree -C -L 3 -x' )
+ for list in "${array[@]}"; do
+        echo -e "\e[33m$list\e[0m"
+    done
+#tree -C -L 3 -x -F
