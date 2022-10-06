@@ -32,11 +32,17 @@ readarray -t target < <(fzf -m --scheme=path \
 if [ "${#target[@]}" -eq 0 ]; then # Condition: (if) array is empty
     echo "Please enter something..."
 else
-COUNTER=1                                             # Variable: counter used in below for loop
-echo -e "\e[32mFollowing files will be backup: \e[0m" # Condition: (else) array have locations
-for list in "${target[@]}"; do
-    echo -e "\e[33m$COUNTER. $list\e[0m"
+    COUNTER=1                                             # Variable: counter used in below for loop
+    echo -e "\e[32mFollowing files will be backup: \e[0m" # Condition: (else) array have locations
+    for list in "${target[@]}"; do
+        echo -e "\e[33m$COUNTER. $list\e[0m"
         COUNTER=$((COUNTER + 1))
-done
-rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+    done
+    read -r -p "Do you want to continue [y/n]: " yn
+    case $yn in
+    [yY])
+        rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+        ;;
+    *) echo "Exiting..." ;;
+    esac
 fi
