@@ -79,10 +79,10 @@ else # Condition(else): if array length is not 0
   fi
 fi
 
-wait
+wait # Command: to hold installation of packages
 echo ""
 echo "Select an option: "
-echo "1. run auto_bck.sh file" # Command: to hold installation of packages
+echo "1. run auto_bck.sh file"
 echo "2. run bck.sh file"
 echo "3. run test.sh file"
 echo "4. Exit"
