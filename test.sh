@@ -177,20 +177,10 @@
 #       ;;
 #esac
 
-
-
-
-
-
-
 #while IFS= read -r line; do # Loop: (while) to enter data from user into array
 #    [[ $line ]] || break    # break if line is empty
 #    target+=("$line")
 #done
-
-
-
-
 
 #cur_folder=$HOME/
 #while true; do
@@ -213,10 +203,12 @@
 #    echo -e "\e[33m$list\e[0m"
 #done
 #tree -C -L 3 -x -F
-cd /
- fzf -m --scheme=path \
-    --tiebreak=begin,index \
-    --border=rounded --ansi \
-    --marker="+" --prompt="/" \
-    --header="Select files" \
-    --preview='tree -C -L 3 -x' > "$HOME"/new.txt
+
+#cd /
+# fzf -m --scheme=path \
+#    --tiebreak=begin,index \
+#    --border=rounded --ansi \
+#    --marker="+" --prompt="/" \
+#    --header="Select files" \
+#    --preview='tree -C -L 3 -x' > "$HOME"/new.txt
+date "+%F_%H-%M"
