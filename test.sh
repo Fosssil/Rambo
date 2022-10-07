@@ -210,5 +210,11 @@
 #    --border=rounded --ansi \
 #    --marker="+" --prompt="/" \
 #    --header="Select files" \
-#    --preview='tree -C -L 3 -x' > "$HOME"/new.txt
-date "+%F_%H-%M"
+#    --preview='tree -C -L 3 -x' > "$HOME"/new.txtrm
+
+if destination="$(mkdir backup_"$(date "+%F_%H-%M")")"; then
+    echo "$destination" created successfully
+    ls
+else
+    echo "not possible"
+fi
