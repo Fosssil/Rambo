@@ -13,14 +13,14 @@ clear
 dialog --begin 10 30 --backtitle "Rambo by fossil" \
     --title "!!! CAUTION !!!" \
     --msgbox 'Some files from System Root(.i.e. / ) can not be successfully backup.
-    They may show error with permission, specially private key files.
+    They may show error with permission, specially private key files or they may be system services.
     Will fix someday.
     Goodluck :) ' 20 70 # Command: (dialog) customised to display ouput
 clear
 
 #echo -e "\e[1;32mEnter your files location to take backup: \e[0m"
 #echo -e "\e[31m(end with an empty line)\e[0m"
-destination=test/
+destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
 cd /
 declare -a target # Array: (declare) name target to store targeted locations
 readarray -t target < <(fzf -m \
@@ -38,10 +38,12 @@ else                                                      # Condition: (else)
         echo -e "\e[33m$COUNTER. $list\e[0m"
         COUNTER=$((COUNTER + 1)) # Counter: (increment)
     done
-    read -r -p "Do you want to continue [y/n]: " yn          # Variable: (read) to continue backup or not
-    case $yn in                                              # Condition: (case)
-    [yY])                                                    # Input: for yes
-        rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+    read -r -p "Do you want to continue [y/n]: " yn # Variable: (read) to continue backup or not
+    case $yn in                                     # Condition: (case)
+    [yY])
+        #mkdir backup_"$(date "+%F_%H-%M")"
+        mkdir "$destination" # Input: for yes
+        rsync -Rrv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
         ;;
     *) echo "Exiting..." ;; # Input: for anything other than yes
     esac
