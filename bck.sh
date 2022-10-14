@@ -40,9 +40,8 @@ else                                                      # Condition: (else)
     done
     read -r -p "Do you want to continue [y/n]: " yn # Variable: (read) to continue backup or not
     case $yn in                                     # Condition: (case)
-    [yY])
-        #mkdir backup_"$(date "+%F_%H-%M")"
-        mkdir "$destination" # Input: for yes
+    [yY])                                           # Input: for yes
+        mkdir "$destination"
         rsync -Rrv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
         ;;
     *) echo "Exiting..." ;; # Input: for anything other than yes

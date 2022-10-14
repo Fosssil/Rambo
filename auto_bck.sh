@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-destination=test/ # Variable: store destination address where, backup files will be placed
+destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
 target=(
     "$HOME/.bash_history"
     "$HOME/.bashrc"
@@ -46,6 +46,9 @@ done
 
 echo ""
 echo " Doing stuff... "
+destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
+mkdir "$destination"
+echo "$destination" created
 
 #for items in "${myArray[@]}"; do # Loop: (for) to pass target address one by one to rync command
 tput setaf 2
@@ -55,5 +58,5 @@ echo ""
 #done
 
 echo ""
-exa -al --color=always -F $destination # Command: the colorfull subtitute for 'ls' command
-tree -ah $destination                  # Command: display the tree structure of destination folder
+exa -al --color=always -F "$destination" # Command: the colorfull subtitute for 'ls' command
+tree -ah "$destination"                  # Command: display the tree structure of destination folder
