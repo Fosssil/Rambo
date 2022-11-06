@@ -81,11 +81,11 @@ fi
 
 wait # Command: to hold installation of packages
 function Backup {
-  echo "Select an option: "
-  echo "1. Auto Backup"
-  echo "2. Manual Backup"
+  echo -e "\t Select an option: "
+  echo -e "\t 1. Auto Backup"
+  echo -e "\t 2. Manual Backup"
   #echo "3. run test.sh file"
-  echo "3. Exit"
+  echo -e "\t 3. Exit"
   while true; do                        # Loop: (while) to get user input to proceed to further steps or not
     read -r -p "Enter an option: " file # Command: read user input
     echo ""
@@ -98,10 +98,6 @@ function Backup {
       source bck.sh # Input: for yes
       break
       ;;
-      #[3])
-      #source test.sh # Input: for yes
-      #break
-      #;;
     [3])
       echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
       exit
@@ -111,15 +107,14 @@ function Backup {
   done
 }
 function Restore {
-
-  echo 'text here'
-
+  read -r -p "Enter Location: " location < <(find / -type d -name "BACKUP*" 2>/dev/null | fzf)
+  echo "$location"
 }
 echo ""
-echo "What do you want to do ?"
-echo "1. Backup"
-echo "2. Restore"
-echo "3. Exit"
+echo -e "What do you want to do ?"
+echo -e "1. Backup"
+echo -e "2. Restore"
+echo -e "3. Exit"
 while true; do
   read -r -p "Enter an option: " file
   echo ""
@@ -132,10 +127,6 @@ while true; do
     Restore
     break
     ;;
-    #[3])
-    #source test.sh # Input: for yes
-    #break
-    #;;
   [3])
     echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
     exit
