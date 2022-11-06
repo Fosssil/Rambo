@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 # shellcheck source=/dev/null
+source colors.sh
 
-tput setaf 1
-echo "
+echo -e "${red}
    ▄████████    ▄████████    ▄▄▄▄███▄▄▄▄   ▀█████████▄   ▄██████▄
   ███    ███   ███    ███  ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███
   ███    ███   ███    ███  ███   ███   ███   ███    ███ ███    ███
@@ -12,25 +12,20 @@ echo "
   ███    ███   ███    ███  ███   ███   ███   ███    ███ ███    ███
   ███    ███   ███    █▀    ▀█   ███   █▀  ▄█████████▀   ▀██████▀
   ███    ███
+${reset}
 "
-tput setaf 5
-echo "A application in development to Backup and Restore files"
+echo -e "${purple}A application in development to Backup and Restore files ${reset}"
 echo ""
-tput setaf 7
 
 ## Block: code to check developer's recommended packages in system
 echo "Checking for required packages..."
 pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa" "dialog" "fzf" "tree") # Array: to store needed packages
 echo ""
-tput bold setaf 2
-echo "Installed on system :"
+echo -e "${green}${bold}Installed on system :${reset}"
 
 for pkg in "${pack[@]}"; do           # Loop: (for) to show packages install or not
   if [ "$(command -v "$pkg")" ]; then # packages available
-    tput bold setaf 2
-    echo "+" "$pkg"
-    tput sgr0
-    tput setaf 7
+    echo -e "${green}${bold}+ $pkg ${reset}"
   else
     pack_to_inst+=("$pkg") # package to install array
   fi
@@ -46,16 +41,13 @@ packagesNeeded=$(inst)     # Variable: to store values from above function
 length=${#pack_to_inst[@]} # Variable: checking length of not installed array
 echo ""
 if [ "$length" -eq 0 ]; then # Condition(if): if array length is 0
-  tput setaf 2
-  echo All packages are installed ":)"
-  tput setaf 7
+  echo -e "${green}All packages are installed :) ${reset}"
   echo ""
 else # Condition(else): if array length is not 0
   tput bold setaf 1
   echo "NOT Installed :"
   tput blink
   echo "$packagesNeeded"
-
   tput sgr0 setaf 7
   echo ""
 
@@ -72,9 +64,7 @@ else # Condition(else): if array length is not 0
   elif [ -x "$(command -v zypper)" ]; then
     sudo zypper install "${pack_to_inst[@]}"
   else
-    tput setaf 1
-    echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install:"
-    tput setaf 7
+    echo "${red}FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install:${reset}"
     echo "$packagesNeeded" >&2
   fi
 fi
@@ -99,10 +89,10 @@ function Backup {
       break
       ;;
     [3])
-      echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
+      echo -e "${red}Exiting...${reset}" # Input: for no (will exit from program)
       exit
       ;;
-    *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
+    *) echo -e "${red}Invalid response..${reset}" ;; # Input: invalid response (ask again)
     esac
   done
 }
@@ -111,7 +101,7 @@ function Restore {
   echo "$location"
 }
 echo ""
-echo -e "What do you want to do ?"
+echo -e "${yellow}What do you want to do ?${reset}"
 echo -e "1. Backup"
 echo -e "2. Restore"
 echo -e "3. Exit"
@@ -128,9 +118,9 @@ while true; do
     break
     ;;
   [3])
-    echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
+    echo -e "${red} Exiting...${reset}" # Input: for no (will exit from program)
     exit
     ;;
-  *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
+  *) echo -e "${red} Invalid response..${reset}" ;; # Input: invalid response (ask again)
   esac
 done
