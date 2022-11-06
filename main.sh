@@ -82,10 +82,10 @@ fi
 wait # Command: to hold installation of packages
 echo ""
 echo "Select an option: "
-echo "1. run auto_bck.sh file"
-echo "2. run bck.sh file"
-echo "3. run test.sh file"
-echo "4. Exit"
+echo "1. Auto Backup"
+echo "2. Manual Backup"
+#echo "3. run test.sh file"
+echo "3. Exit"
 while true; do                        # Loop: (while) to get user input to proceed to further steps or not
   read -r -p "Enter an option: " file # Command: read user input
   echo ""
@@ -98,11 +98,11 @@ while true; do                        # Loop: (while) to get user input to proce
     source bck.sh # Input: for yes
     break
     ;;
+    #[3])
+    #source test.sh # Input: for yes
+    #break
+    #;;
   [3])
-    source test.sh # Input: for yes
-    break
-    ;;
-  [4])
     echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
     exit
     ;;
