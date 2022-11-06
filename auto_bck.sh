@@ -3,7 +3,7 @@ dialog --begin 10 30 --backtitle "Rambo by fossil" \
     --title "Important" \
     --msgbox '* In this option user do not have to manually input the files location.
 * Program will automatically select the pre-defined files location.
-i
+
       Thanks' 20 70 # Command: (dialog) customised to display ouput
 clear
 destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
