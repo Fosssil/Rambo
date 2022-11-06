@@ -18,6 +18,10 @@ dialog --begin 10 30 --backtitle "Rambo by fossil" \
     Goodluck :) ' 20 70 # Command: (dialog) customised to display ouput
 clear
 
+dialog --begin 10 30 --backtitle "Rambo by fossil" \
+    --title "!!! TIP !!!" \
+    --msgbox ' Use <TAB> to select multiple files ' 10 40 # Command: (dialog) customised to display ouput
+clear
 #echo -e "\e[1;32mEnter your files location to take backup: \e[0m"
 #echo -e "\e[31m(end with an empty line)\e[0m"
 destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
