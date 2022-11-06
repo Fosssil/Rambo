@@ -80,22 +80,56 @@ else # Condition(else): if array length is not 0
 fi
 
 wait # Command: to hold installation of packages
+function Backup {
+  echo "Select an option: "
+  echo "1. Auto Backup"
+  echo "2. Manual Backup"
+  #echo "3. run test.sh file"
+  echo "3. Exit"
+  while true; do                        # Loop: (while) to get user input to proceed to further steps or not
+    read -r -p "Enter an option: " file # Command: read user input
+    echo ""
+    case $file in # Conditon: switch case
+    [1])
+      source auto_bck.sh # Input: for yes
+      break
+      ;;
+    [2])
+      source bck.sh # Input: for yes
+      break
+      ;;
+      #[3])
+      #source test.sh # Input: for yes
+      #break
+      #;;
+    [3])
+      echo -e "\e[31m Exiting...\e[0m" # Input: for no (will exit from program)
+      exit
+      ;;
+    *) echo -e "\e[31m Invalid response..\e[0m" ;; # Input: invalid response (ask again)
+    esac
+  done
+}
+function Restore {
+
+  echo 'text here'
+
+}
 echo ""
-echo "Select an option: "
-echo "1. Auto Backup"
-echo "2. Manual Backup"
-#echo "3. run test.sh file"
+echo "What do you want to do ?"
+echo "1. Backup"
+echo "2. Restore"
 echo "3. Exit"
-while true; do                        # Loop: (while) to get user input to proceed to further steps or not
-  read -r -p "Enter an option: " file # Command: read user input
+while true; do
+  read -r -p "Enter an option: " file
   echo ""
   case $file in # Conditon: switch case
   [1])
-    source auto_bck.sh # Input: for yes
+    Backup
     break
     ;;
   [2])
-    source bck.sh # Input: for yes
+    Restore
     break
     ;;
     #[3])
