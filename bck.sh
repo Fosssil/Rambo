@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 dialog --begin 10 30 --backtitle "Rambo by fossil" \
     --title "Important" \
-    --msgbox 'From this step, this appllication will take backup as per your demand and will store files to your desired location.
+    --msgbox 'From this step, this application will take backup as per your demand and will store files to your desired location.
     * After this window you will a input prompt in your terminal.
     * You have to put the full path(i.e. Relative Path) of the file/files.
     * Please Do not leave it empty.
