@@ -99,6 +99,7 @@ function Backup {
 function Restore {
   read -r -p "Enter Location: " location < <(find / -type d -name "BACKUP*" 2>/dev/null | fzf)
   echo "$location"
+  echo "Restoring..."
 }
 echo ""
 echo -e "${yellow}What do you want to do ?${reset}"
