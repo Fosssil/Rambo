@@ -46,7 +46,7 @@ else                                                      # Condition: (else)
     case $yn in                                     # Condition: (case)
     [yY])                                           # Input: for yes
         mkdir "$destination"
-        rsync -Rrv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+        rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
         ;;
     *) echo "Exiting..." ;; # Input: for anything other than yes
     esac

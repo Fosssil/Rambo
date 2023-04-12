@@ -59,7 +59,7 @@ echo "$destination" created
 
 #for items in "${myArray[@]}"; do # Loop: (for) to pass target address one by one to rync command
 tput setaf 2
-rsync -Rrv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
+rsync -Rrnv --progress "${target[@]}" "$destination" # Command: rsync to backup files, -n to dry_run
 tput setaf 7
 echo ""
 #done
