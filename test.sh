@@ -212,9 +212,20 @@
 #    --header="Select files" \
 #    --preview='tree -C -L 3 -x' > "$HOME"/new.txtrm
 
-if destination="$(mkdir backup_"$(date "+%F_%H-%M")")"; then
-    echo "$destination" created successfully
-    ls
-else
-    echo "not possible"
-fi
+#if destination="$(mkdir backup_"$(date "+%F_%H-%M")")"; then
+#    echo "$destination" created successfully
+#    ls
+#else
+#    echo "not possible"
+#fi
+
+function Restore {
+    read -r -p "Enter Location: " location < <(find / -type d -name "BACKUP*" 2>/dev/null | fzf)
+    echo "$location"
+    cd "$location" || exit
+    tree
+    echo "Restoring..."
+    rsync -Rrv --progress # Command: rsync to backup files, -n to dry_run
+
+}
+Restore
