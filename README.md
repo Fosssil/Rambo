@@ -3,7 +3,7 @@
 </p> 
 
 Fossil :wilted_flower: <br>
-A Backup and Restore app for linux based OSs <br>
+A Backup and Restore application for linux based OSs <br>
 ### How it works
 * Firstly it will check for required packages.
     1. If found it will go for next step .
@@ -60,8 +60,6 @@ A Backup and Restore app for linux based OSs <br>
 Easter egg: You ask to execute command, but you don't ask with sudo 
 1. Sagar Dahiya - Developer and main tester
 2. Deepak Chandra Pandey - Tester & Documentation Editor
-3. Manisha Arora - Tester & Documentation Editor
-4. Khushi Sharma - Tester & Documentation Editor
-5. Pardeep - Tester
+3. Pardeep - Tester
 
 
