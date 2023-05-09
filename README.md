@@ -58,8 +58,8 @@ A Backup and Restore application for linux based OSs <br>
 
 ## Team Members and their roles.
 Easter egg: You ask to execute command, but you don't ask with sudo 
-1. Sagar Dahiya - Developer and main tester
-2. Deepak Chandra Pandey - Tester & Documentation Editor
-3. Pardeep - Tester
-
+1. Sagar Dahiya
+2. Deepak Chandra Pandey
+3. Pardeep
+4. Aditya Singh 
 
