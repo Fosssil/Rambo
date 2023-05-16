@@ -225,7 +225,7 @@ function Restore {
     cd "$location" || exit
     tree
     echo "Restoring..."
-    rsync -Rrv --progress # Command: rsync to backup files, -n to dry_run
+    rsync -rv --progress "$location/" "$HOME/Applications" # Command: rsync to backup files, -n to dry_run
 
 }
 Restore
