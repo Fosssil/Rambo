@@ -5,7 +5,8 @@ echo ""
 echo -e "${yellow}What do you want to do ?${reset}"
 echo -e "1. Backup"
 echo -e "2. Restore"
-echo -e "3. Exit"
+echo -e "3. Sync Remote"
+echo -3 "4. Exit"
 while true; do
     read -r -p "Enter an option: " file
     echo ""
@@ -19,6 +20,10 @@ while true; do
         break
         ;;
     [3])
+	source s3.sh
+	break
+	;;
+    [4])
         echo -e "${red} Exiting...${reset}" # Input: for no (will exit from program)
         exit
         ;;
