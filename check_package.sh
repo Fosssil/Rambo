@@ -4,7 +4,7 @@ source color.sh
 
 ## Block: code to check developer's recommended packages in system
 echo "Checking for required packages..."
-pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa" "dialog" "fzf" "tree") # Array: to store needed packages
+pack=("rsync" "ssh" "tar" "gzip" "bzip2" "exa" "dialog" "fzf" "tree" "s3cmd") # Array: to store needed packages
 echo ""
 echo -e "${green}${bold}Installed on system :${reset}"
 
