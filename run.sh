@@ -21,15 +21,17 @@ while true; do
         break
         ;;
     [3])
-        echo -e "${green}Uploading to AWS...${reset}"
-        echo -e "${green}...${reset}"
+        echo -e "${cyan}Uploading to AWS...${reset}"
+        echo -e "${cyan}...${reset}"
         /bin/python upload.py
+        echo -e "${green}Done${reset}"
         break
         ;;
     [4])
-        echo -e "${green}Downloading to Downloads folder${reset}"
-        echo -e "${green}...${reset}"
+        echo -e "${cyan}Downloading to Downloads folder${reset}"
+        echo -e "${cyan}...${reset}"
         /bin/python download.py
+        echo -e "${green}Done${reset}"
         break
         ;;
     [5])
