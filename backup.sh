@@ -27,7 +27,8 @@ function bck {
     clear
     #echo -e "\e[1;32mEnter your files location to take backup: \e[0m"
     #echo -e "\e[31m(end with an empty line)\e[0m"
-    destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
+    #destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
+    destination=$HOME/BACKUP
     cd /
     declare -a target # Array: (declare) name target to store targeted locations
     readarray -t target < <(fzf -m \
@@ -109,7 +110,8 @@ function auto_bck {
     done
 
     echo ""
-    destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
+    #destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
+    destination=$HOME/BACKUP
     mkdir "$destination"
     echo "$destination" created
 
