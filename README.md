@@ -38,6 +38,8 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 
 - **GUI:** Develop a user-friendly graphical interface to appeal to a wider audience, simplifying backup, restore, and AWS S3 integration.
 
+- **Cross-Distribution Package:** Create a package for easy installation via various Linux package managers, increasing user convenience.
+
 - **Cloud Service Integration:** Add support for multiple cloud storage services, expanding options for users' preferred cloud providers.
 
 - **Incremental Backups:** Optimize backups by introducing incremental backups to reduce backup time and storage usage.
@@ -45,8 +47,6 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 - **Scheduling and Automation:** Allow users to schedule automatic backups and streamline the backup process.
 
 - **Error Handling and Logging:** Enhance error handling and logging to ensure data integrity during backup and restore processes.
-
-- **Multi-Platform Support:** Extend compatibility to macOS and Windows, reaching a broader user base.
 
 - **Community Collaboration:** Encourage collaboration on platforms like GitHub to drive innovation and improvements.
 
