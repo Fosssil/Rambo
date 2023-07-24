@@ -42,7 +42,6 @@ In conclusion, the "Rambo: A Linux File Backup and Restore Software" project has
 - Comprehensive Documentation: Provide detailed documentation for installation, usage, and troubleshooting.
 
 By incorporating these enhancements, "Rambo" will evolve into a versatile, user-friendly backup and restore solution for Linux users, catering to diverse needs within the Linux community and beyond.
-
 ## Contributors
 - **Name:** Sagar Dahiya
 - **EMAIL ID:** sagardahiya6969@gmail.com
@@ -52,6 +51,6 @@ By incorporating these enhancements, "Rambo" will evolve into a versatile, user-
 
 - **Name:** Deepak Chandra Pandey
 - **EMAIL ID:** uic.21mcc2045@gmail.com
-
+</comment>
 
 
