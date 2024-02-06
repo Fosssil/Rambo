@@ -32,7 +32,7 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 
 - As an open-source project, community contributions and feedback are encouraged to further enhance the software. Future improvements may include encryption, a GUI for broader accessibility, and packaging for easy installation across Linux distributions.
 
-## Future Scope
+## Future Goals
 
 - **Encryption:** Implement strong encryption mechanisms to ensure data confidentiality during transit and storage.
 
@@ -42,7 +42,7 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 
 - **Cloud Service Integration:** Add support for multiple cloud storage services, expanding options for users' preferred cloud providers.
 
-- **Incremental Backups:** Optimize backups by introducing incremental backups to reduce backup time and storage usage.
+- **Incremental Backups:** Optimize backups by introducing incremental backups to reduce backup time and storage usage. Will implement snapshot concept.
 
 - **Scheduling and Automation:** Allow users to schedule automatic backups and streamline the backup process.
 
@@ -53,6 +53,7 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 - **Comprehensive Documentation:** Provide detailed documentation for installation, usage, and troubleshooting.
 
 By incorporating these enhancements, "Rambo" will evolve into a versatile, user-friendly backup and restore solution for Linux users, catering to diverse needs within the Linux community and beyond.
+
 <!--## Contributors
 - **Name:** Sagar Dahiya
 - **EMAIL ID:** sagardahiya6969@gmail.com
