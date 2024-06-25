@@ -56,7 +56,7 @@ By incorporating these enhancements, "Rambo" will evolve into a versatile, user-
 
 ## Goals to complete
 - [x] Writing a code that works.
-- [x] S3 buket support.
+- [x] S3 bucket support.
 - [ ] Modify Restoration & object handling algorithms.
 - [ ] Compression.
 - [ ] Encryption.
