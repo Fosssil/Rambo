@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC1091
 source color.sh
 
 read -r -p "Enter Location: " location < <(find / -type d -name "BACKUP*" 2>/dev/null | fzf)
