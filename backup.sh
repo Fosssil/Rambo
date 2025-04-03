@@ -3,25 +3,6 @@ source color.sh
 
 function bck {
 	dialog --begin 10 30 --backtitle "Rambo by fossil" \
-		--title "Important" \
-		--msgbox 'From this step, this application will take backup as per your demand and will store files to your desired location.
-            * After this window you will a input prompt in your terminal.
-            * You have to put the full path(i.e. Relative Path) of the file/files.
-            * Please Do not leave it empty.
-            * Empty line end the taking input.
-
-            Thanks' 20 70 # Command: (dialog) customised to display ouput
-	clear
-
-	dialog --begin 10 30 --backtitle "Rambo by fossil" \
-		--title "!!! CAUTION !!!" \
-		--msgbox 'Some files from System Root(.i.e. / ) can not be successfully backup.
-                            They may show error with permission, specially private key files or they may be system services.
-                            Will fix someday.
-                            Goodluck :) ' 20 70 # Command: (dialog) customised to display ouput
-	clear
-
-	dialog --begin 10 30 --backtitle "Rambo by fossil" \
 		--title "!!! TIP !!!" \
 		--msgbox ' Use <TAB> to select multiple files ' 10 40 # Command: (dialog) customised to display ouput
 	clear
@@ -29,13 +10,14 @@ function bck {
 	#echo -e "\e[31m(end with an empty line)\e[0m"
 	#destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
 	destination=$HOME/BACKUP
-	cd $HOME 
+	cd "$HOME" || return
 	declare -a target # Array: (declare) name target to store targeted locations
-	readarray -t target < <(fzf -m \
+	readarray -t target < <(find . -type d | fzf -m \
 		--tiebreak=begin,index \
 		--border=rounded --ansi \
 		--marker='+' --prompt='/' \
-		--header='Select files' --preview='tree -C -L 3 -x') # Array(target): (readarray) from customised fzf tool
+		--header='Select files' --preview='ls {}') # Array(target): (readarray) from customised fzf tool
+		###### Important === ❯ find . -type f | fzf -m --tiebreak=begin,index --border=rounded --ansi --marker='+' --prompt='/' --header='Select files' --preview='cat {}'
 
 	if [ "${#target[@]}" -eq 0 ]; then # Condition: (if) array is empty
 		echo "Please enter something..."
@@ -58,13 +40,6 @@ function bck {
 }
 
 function auto_bck {
-	dialog --begin 10 30 --backtitle "Rambo by fossil" \
-		--title "Important" \
-		--msgbox '* In this option user do not have to manually input the files location.
-                                                                                                                            * Program will automatically select the pre-defined files location.
-
-                                                                                                                            Thanks' 20 70 # Command: (dialog) customised to display ouput
-	clear
 	target=(
 		"$HOME/.bash_history"
 		"$HOME/.bashrc"
