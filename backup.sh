@@ -29,7 +29,7 @@ function bck {
 	#echo -e "\e[31m(end with an empty line)\e[0m"
 	#destination=$HOME/BACKUP_"$(date "+%F_%H-%M")"
 	destination=$HOME/BACKUP
-	cd /
+	cd $HOME 
 	declare -a target # Array: (declare) name target to store targeted locations
 	readarray -t target < <(fzf -m \
 		--tiebreak=begin,index \
