@@ -58,6 +58,7 @@ By incorporating these enhancements, "Rambo" will evolve into a versatile, user-
 
 - [x] Writing a code that works.
 - [x] S3 bucket support.
+- [ ] Add functionalities for some linux automation work.
 - [ ] Modify Restoration & object handling algorithms.
 - [ ] Compression.
 - [ ] Encryption.
