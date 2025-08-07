@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source color.sh
-source title.sh
-source check_package.sh
-source run.sh
+source ./src/color.sh
+source ./src/title.sh
+source ./src/check_package.sh
+source ./src/run.sh
