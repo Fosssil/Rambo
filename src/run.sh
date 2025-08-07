@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source color.sh
+source src/color.sh
 
 echo ""
 echo -e "${yellow}What do you want to do ?${reset}"
