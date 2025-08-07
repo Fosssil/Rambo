@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Fosssil/Rambo/blob/main/LOGO.png" />
+  <img src="https://github.com/Fosssil/Rambo/blob/main/docs/LOGO.png" />
 </p>
 
 ## Description
@@ -55,6 +55,7 @@ The "Rambo" project is an all-inclusive software solution designed to provide se
 By incorporating these enhancements, "Rambo" will evolve into a versatile, user-friendly backup and restore solution for Linux users, catering to diverse needs within the Linux community and beyond.
 
 ## Goals to complete
+
 - [x] Writing a code that works.
 - [x] S3 bucket support.
 - [ ] Modify Restoration & object handling algorithms.
@@ -62,7 +63,6 @@ By incorporating these enhancements, "Rambo" will evolve into a versatile, user-
 - [ ] Encryption.
 - [ ] GUI.
 - [ ] Idempotency.
-
 
 <!--## Contributors
 - **Name:** Sagar Dahiya
