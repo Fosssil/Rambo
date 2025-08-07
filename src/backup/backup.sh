@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source color.sh
+source ../color.sh
 
 function bck {
   destination=$HOME/BACKUP

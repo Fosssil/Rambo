@@ -5,19 +5,17 @@ echo ""
 echo -e "${yellow}What do you want to do ?${reset}"
 echo -e "1. Backup"
 echo -e "2. Restore"
-echo -e "3. Upload to Cloud"
-echo -e "4. Download from Cloud"
-echo -e "5. Exit"
+echo -e "3. Exit"
 while true; do
   read -r -p "Enter an option: " file
   echo ""
   case $file in # Conditon: switch case
   [1])
-    source ./backup/backup.sh
+    source src/backup/backup.sh
     break
     ;;
   [2])
-    source ./restore/restore.sh
+    source src/restore/restore.sh
     break
     ;;
   [3])
