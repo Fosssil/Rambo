@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source color.sh
+source src/color.sh
 
 ## Block: code to check developer's recommended packages in system
 echo "Checking for required packages..."
